@@ -1,18 +1,20 @@
 package List::Part;
 
-use 5.008;
-use strict;
-use warnings;
+#Prototypes
+BEGIN { require 5.002 }
 
 use Carp qw(croak);
 
 use Exporter;
-our @ISA = qw(Exporter);
+@ISA = qw(Exporter);
 
-our @EXPORT_OK = qw( parta );
-our @EXPORT = qw( part );
+@EXPORT_OK = qw( parta );
+@EXPORT = qw( part );
 
-our $VERSION = '0.02';
+$VERSION = '0.03';
+
+use strict;
+use warnings;
 
 sub part(&@) {
     my $code=shift;
@@ -109,6 +111,10 @@ Actually, the second one is better suited to C<part>'s alternate form, C<parta>:
         [ sub { $_->talented }, sub { $_->is_executive }, qr// ] => 
         @employees;
 
+Or maybe you just want yet another way to write the traditional Perl signoff:
+
+    perl -MList::Part -e"print map{@$_}part{$i++%5}split'','JAercunrlkso  ettPHr hea,'"
+
 List::Part can help you do those sorts of things.
 
 =head2 Functions
@@ -151,7 +157,7 @@ arrayref:
 =item * B<Array references> match if any of their elements matches the value.
 
 =item * B<Hash references> match if their associated value in the hash, i.e. 
-C<$hashref->{$value}>, is true.
+C<< $hashref->{$value} >>, is true.
 
 =item * B<Code references> match if, when invoked on the item, they return true.
 

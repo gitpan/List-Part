@@ -7,8 +7,8 @@ reference.
 
 LATEST VERSION
 
-Just a few minor fixes in the documentation--nothing really worth 
-updating over.
+Removed some 'our's, and the Perl version restrictions, so it ought 
+to work on any Perl <= 5.002.  Also added a JAPH to the documentation.
 
 INSTALLATION
 
