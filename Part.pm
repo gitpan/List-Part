@@ -12,7 +12,7 @@ our @ISA = qw(Exporter);
 our @EXPORT_OK = qw( parta );
 our @EXPORT = qw( part );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub part(&@) {
     my $code=shift;
@@ -106,8 +106,10 @@ Or, suppose you have a list of employees, and you need to determine their fate:
 Actually, the second one is better suited to C<part>'s alternate form, C<parta>:
 
     my($lay_off, $give_raise, $keep)=parta
-        [ sub { $_->talented }, sub { $_->is_executive }, qr// ]
+        [ sub { $_->talented }, sub { $_->is_executive }, qr// ] => 
         @employees;
+
+List::Part can help you do those sorts of things.
 
 =head2 Functions
 
@@ -169,21 +171,10 @@ the end of the arrayref.
 
 C<part> is exported by default; C<parta> can be exported specifically.
 
-=head1 DIAGNOSTICS
-
-=over 4
-
-=item B<parta does not know how to match against an object of type %s>
-
-This exception is thrown when an item in the array reference is of a type that C<parta>'s 
-matching rules don't cover.  The only valid types are plain scalars, array references, hash 
-references, code references, precompiled regular expressions, and objects with a C<matches> 
-method.
-
 =head1 BUGS and ENHANCEMENTS
 
 There are no known bugs, and since the code for this module is fairly simple, I don't 
-expect there will be any.
+expect there will be many.
 
 Bug reports and enhancement requests are welcome, but I'm far more likely to act on them if 
 they're accompanied by a patch fixing/implementing them.  Also, if you get this to work on 

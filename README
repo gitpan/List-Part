@@ -1,8 +1,14 @@
-List::Part version 0.01
+List::Part version 0.02
 =======================
 
-List::Part implements the C<part> function, allowing one array to be 
-"partitioned" into several based on the results of a code reference.
+List::Part implements the C<part> function, allowing one array to 
+be "partitioned" into several based on the results of a code 
+reference.
+
+LATEST VERSION
+
+Just a few minor fixes in the documentation--nothing really worth 
+updating over.
 
 INSTALLATION
 
