@@ -1,0 +1,6 @@
+Revision history for Perl extension List::part.
+
+0.01  Sun Dec 21 16:23:51 2003
+	- Initial version
+	- Includes functions part(&@), parta($@)
+
